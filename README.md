@@ -121,8 +121,8 @@ git push -u origin main
               ↓
           app.py (Dash)
        Module 4 Dashboard
-'''
-### Key Design Decisions
+```
+# Key Design Decisions
 Why one ThreatEvent schema for all sources? Every API returns different fields. Normalizing into one Pydantic model means charts never need to know which source data came from — they just read attack_type, severity_score, source_geo etc. consistently.
 
 Why MongoDB over SQL? Threat events are JSON documents with nested geo objects. MongoDB stores and queries these natively. The aggregation pipeline handles all the groupby/count operations charts need.
